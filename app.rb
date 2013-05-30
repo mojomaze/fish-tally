@@ -10,4 +10,8 @@ class FishTally < Sinatra::Base
   get "/" do
     "Hello, World!"
   end
+  
+  get "/about" do
+    "About FishTally"
+  end
 end

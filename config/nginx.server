@@ -19,7 +19,7 @@ server {
   # Name the server is accessed with
   # Can be an IP, an FQDN...
   # Space separated list
-  server_name www.fish-tally.com;
+  server_name fish-tally.com www.fish-tally.com;
   
   charset utf-8;
 

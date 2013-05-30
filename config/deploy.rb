@@ -7,10 +7,13 @@
 # Runs bundler commands on deployment
 require "bundler/capistrano"
 
-# Load rbenv
-# set :default_environment, {
-#   "PATH" => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-# }
+# Load rvm
+set :default_environment, {
+  "PATH" => "/usr/local/rvm/gems/ruby-1.9.3-p392/bin:/usr/local/rvm/gems/ruby-1.9.3-p392@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p392/bin:/usr/local/rvm/bin:$PATH"
+}
+
+set :rvm_ruby_string, 'ruby-1.9.3-p392'
+set :rvm_type, :system
 
 # Application name
 set :application, "fish-tally"
@@ -36,7 +39,7 @@ set :deploy_via, :remote_cache
  
 # server roles
 # DOMAIN can be an IP or FQDN
-server "server "107.0.125.90", :web, :app, :db, primary: true", :web, :app, :db, primary: true
+server "198.199.66.35", :web, :app, :db, primary: true
 
 # After an initial (cold) deploy, symlink the app and restart nginx
 after "deploy:cold" do
@@ -83,3 +86,4 @@ namespace :admin do
     run "#{sudo} service nginx restart"
   end
 end
+require 'rvm/capistrano'
