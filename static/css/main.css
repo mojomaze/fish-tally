@@ -1,0 +1,15 @@
+.header img, .slide img{
+	float: left;
+	margin: 0 10px;
+}
+
+.header .clear, .slide .clear {
+	clear: both;
+	margin-bottom: 10px;
+}
+
+.header h1, .slide h1 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	line-height: 20px;
+}
